@@ -1,47 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    color: #333;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .game-container {
-    text-align: center;
-    border: 2px solid #ddd;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
 }
 
-#anime-girl {
-    width: 300px;
-    cursor: pointer;
-    transition: transform 0.1s ease-in-out;
+h1 {
+  color: #333;
 }
 
-#anime-girl:hover {
-    transform: scale(1.05);
+.clicker-area img {
+  width: 200px;
+  cursor: pointer;
 }
 
-.score {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+button {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
-.upgrade-btn {
-    font-size: 18px;
-    padding: 10px 20px;
-    background-color: #ff7f7f;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+button:hover {
+  background-color: #3700b3;
 }
 
-.upgrade-btn:hover {
-    background-color: #ff5c5c;
+.shop {
+  margin-top: 30px;
+  text-align: left;
+}
+
+#upgrade-btn {
+  background-color: #03dac6;
+}
+
+#upgrade-btn:hover {
+  background-color: #018786;
 }
