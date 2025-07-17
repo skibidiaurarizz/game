@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Girl Clicker Game</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Girl Clicker Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="game-container">
-        <h1>Anime Girl Clicker</h1>
-
-        <div id="score" class="score">Score: 0</div>
-
-        <div id="anime-girl-container">
-            <img id="anime-girl" src="anime_girl.png" alt="Anime Girl" />
-        </div>
-
-        <button id="upgrade-btn" class="upgrade-btn" onclick="upgrade()">Upgrade (Cost: 50)</button>
+  <div class="game-container">
+    <h1>Anime Girl Clicker Game</h1>
+    <div class="clicker-area">
+      <img id="anime-girl" src="images/girl.png" alt="Anime Girl" />
     </div>
+    <div class="stats">
+      <p>Clicks: <span id="clicks">0</span></p>
+      <button id="click-button">Click Me!</button>
+    </div>
+    <div class="shop">
+      <h2>Upgrade Your Clicker</h2>
+      <button id="upgrade-btn">Upgrade Click Power (10 Clicks)</button>
+      <p>Upgrade Cost: <span id="upgrade-cost">10</span> Clicks</p>
+    </div>
+  </div>
 
-    <script src="game.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
