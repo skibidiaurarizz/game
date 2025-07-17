@@ -1,30 +1,29 @@
-let score = 0;
+// Initialize game variables
+let clicks = 0;
 let clickPower = 1;
-let upgradeCost = 50;
+let upgradeCost = 10;
 
-const scoreDisplay = document.getElementById("score");
-const animeGirl = document.getElementById("anime-girl");
+// Get DOM elements
+const clicksDisplay = document.getElementById("clicks");
+const clickButton = document.getElementById("click-button");
 const upgradeButton = document.getElementById("upgrade-btn");
+const upgradeCostDisplay = document.getElementById("upgrade-cost");
 
-animeGirl.addEventListener("click", () => {
-    score += clickPower;
-    updateScore();
+// Event listener for clicking the anime girl
+clickButton.addEventListener("click", () => {
+  clicks += clickPower;
+  clicksDisplay.textContent = clicks;
 });
 
-function updateScore() {
-    scoreDisplay.textContent = `Score: ${score}`;
-    if (score >= upgradeCost) {
-        upgradeButton.disabled = false;
-    } else {
-        upgradeButton.disabled = true;
-    }
-}
-
-function upgrade() {
-    if (score >= upgradeCost) {
-        score -= upgradeCost;
-        clickPower += 1;
-        upgradeCost = Math.floor(upgradeCost * 1.5); // Increase upgrade cost
-        updateScore();
-    }
-}
+// Event listener for upgrading click power
+upgradeButton.addEventListener("click", () => {
+  if (clicks >= upgradeCost) {
+    clicks -= upgradeCost;
+    clickPower++;
+    upgradeCost = Math.floor(upgradeCost * 1.5); // Increase upgrade cost
+    clicksDisplay.textContent = clicks;
+    upgradeCostDisplay.textContent = upgradeCost;
+  } else {
+    alert("Not enough clicks!");
+  }
+});
