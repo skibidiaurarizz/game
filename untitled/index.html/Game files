@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Girl Clicker Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Anime Girl Clicker</h1>
+
+        <div id="score" class="score">Score: 0</div>
+
+        <div id="anime-girl-container">
+            <img id="anime-girl" src="anime_girl.png" alt="Anime Girl" />
+        </div>
+
+        <button id="upgrade-btn" class="upgrade-btn" onclick="upgrade()">Upgrade (Cost: 50)</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
