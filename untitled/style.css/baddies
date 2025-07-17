@@ -1,0 +1,47 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.game-container {
+    text-align: center;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+#anime-girl {
+    width: 300px;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+#anime-girl:hover {
+    transform: scale(1.05);
+}
+
+.score {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.upgrade-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #ff7f7f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upgrade-btn:hover {
+    background-color: #ff5c5c;
+}
