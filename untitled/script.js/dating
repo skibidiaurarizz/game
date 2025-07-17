@@ -1,55 +1,30 @@
-import tkinter as tk
-from tkinter import messagebox
-from PIL import Image, ImageTk
+let score = 0;
+let clickPower = 1;
+let upgradeCost = 50;
 
-class ClickerGame:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Anime Girl Clicker")
-        self.root.geometry("400x600")
+const scoreDisplay = document.getElementById("score");
+const animeGirl = document.getElementById("anime-girl");
+const upgradeButton = document.getElementById("upgrade-btn");
 
-        # Game state
-        self.score = 0
-        self.click_power = 1
+animeGirl.addEventListener("click", () => {
+    score += clickPower;
+    updateScore();
+});
 
-        # Load anime image
-        try:
-            self.image = Image.open("anime_girl.png")  # Replace with your anime image file
-            self.image = self.image.resize((300, 300), Image.ANTIALIAS)
-            self.tk_image = ImageTk.PhotoImage(self.image)
-        except Exception as e:
-            messagebox.showerror("Image Error", f"Could not load image:\n{e}")
-            self.root.destroy()
-            return
+function updateScore() {
+    scoreDisplay.textContent = `Score: ${score}`;
+    if (score >= upgradeCost) {
+        upgradeButton.disabled = false;
+    } else {
+        upgradeButton.disabled = true;
+    }
+}
 
-        # Score display
-        self.score_label = tk.Label(self.root, text=f"Score: {self.score}", font=("Arial", 20))
-        self.score_label.pack(pady=10)
-
-        # Anime girl image button
-        self.image_button = tk.Button(self.root, image=self.tk_image, command=self.on_click, bd=0)
-        self.image_button.pack(pady=10)
-
-        # Upgrade button
-        self.upgrade_button = tk.Button(self.root, text="Upgrade (Cost: 50)", command=self.upgrade, font=("Arial", 14))
-        self.upgrade_button.pack(pady=20)
-
-    def on_click(self):
-        self.score += self.click_power
-        self.update_score()
-
-    def upgrade(self):
-        if self.score >= 50:
-            self.score -= 50
-            self.click_power += 1
-            self.update_score()
-        else:
-            messagebox.showinfo("Not enough points", "You need 50 points to upgrade!")
-
-    def update_score(self):
-        self.score_label.config(text=f"Score: {self.score}")
-
-if __name__ == "__main__":
-    root = tk.Tk()
-    game = ClickerGame(root)
-    root.mainloop()
+function upgrade() {
+    if (score >= upgradeCost) {
+        score -= upgradeCost;
+        clickPower += 1;
+        upgradeCost = Math.floor(upgradeCost * 1.5); // Increase upgrade cost
+        updateScore();
+    }
+}
